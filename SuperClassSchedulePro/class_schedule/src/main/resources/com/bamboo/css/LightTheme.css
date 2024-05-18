@@ -1,0 +1,112 @@
+BorderPane {
+    -fx-background-color: transparent;
+    -fx-border-color: rgb(180, 180, 180);
+    -fx-border-width: 1;
+    -fx-border-radius: 10;
+}
+
+#titlePane {
+    -fx-background-color: rgb(220, 220, 220);
+    -fx-background-radius: 10 10 0 0;
+}
+
+#leftTopLabel {
+    -fx-background-color: rgb(200, 200, 200);
+    -fx-background-radius: 10 0 0 0;
+}
+
+#sidePane {
+    -fx-background-color: rgb(200, 200, 200);
+    -fx-background-radius: 0 0 0 10;
+}
+
+#scrollPane {
+    -fx-background: transparent;
+    -fx-background-color: rgb(220, 220, 220);
+    -fx-control-inner-background: rgb(220, 220, 220);
+}
+
+#stackPane {
+    -fx-background-color: rgb(220, 220, 220);
+    -fx-background-radius: 0 0 10 0;
+    -fx-padding: 0 10 0 20;
+}
+
+#notePane,
+#termStartDateTextField,
+#classTextArea {
+    -fx-control-inner-background: rgb(220, 220, 220);
+}
+
+.chart-bar {
+    -fx-bar-fill: #8a8aff !important;
+}
+
+#weekDateGridPane {
+    -fx-vgap: 5;
+    -fx-padding: 5 0 5 0;
+}
+
+Label {
+    -fx-text-fill: rgb(50, 50, 50);
+    -fx-font-size: 20;
+    -fx-alignment: center;
+    -fx-wrap-text: true;
+    -fx-background-radius: 25;
+}
+
+.clickedLabel:hover,
+#homepageLabel:hover,
+#classScheduleLabel:hover,
+#previousWeekLabel:hover,
+#nextWeekLabel:hover,
+#noteLabel:hover,
+#newNoteLabel:hover,
+#saveNoteLabel:hover,
+#deleteNoteLabel:hover,
+#statisticsLabel:hover,
+#settingsLabel:hover,
+#importLabel:hover,
+#statistics_pre:hover,
+#statistics_next:hover,
+#statistics_month:hover,
+#statistics_week:hover,
+#statistics_score:hover,
+#statistics_coursetime:hover,
+#searchLabel:hover {
+    -fx-background-color: lightgray;
+    -fx-cursor: hand;
+}
+
+.clickedLabel,
+#homepageLabel,
+#classScheduleLabel,
+#previousWeekLabel,
+#nextWeekLabel,
+#noteLabel,
+#newNoteLabel,
+#saveNoteLabel,
+#deleteNoteLabel,
+#statisticsLabel,
+#settingsLabel,
+#importLabel,
+#statistics_pre,
+#statistics_next,
+#statistics_month,
+#statistics_week,
+#statistics_score,
+#statistics_coursetime,
+#searchLabel {
+    -fx-background-color: rgb(230, 230, 230);
+    -fx-background-insets: 5;
+}
+
+#closeLabel:hover {
+    -fx-background-color: lightgray;
+    -fx-background-radius: 0 10 0 0;
+    -fx-cursor: hand;
+}
+
+#notesListPane {
+    -fx-alignment: TOP_CENTER;
+}

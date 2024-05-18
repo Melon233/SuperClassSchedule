@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane prefHeight="780.0" prefWidth="1440.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.bamboo.controller.MainWindowController">
+   <left>
+      <VBox fx:id="sidePane" prefHeight="680.0" prefWidth="66.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label fx:id="homepageLabel" layoutX="10.0" layoutY="10.0" prefHeight="58.0" prefWidth="72.0" text="主页">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <font>
+                  <Font name="HYWenHei-65W Medium" size="12.0" />
+               </font>
+            </Label>
+            <Label fx:id="classScheduleLabel" prefHeight="58.0" prefWidth="72.0" text="课表">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Label>
+            <Label fx:id="noteLabel" layoutX="10.0" layoutY="10.0" prefHeight="58.0" prefWidth="72.0" text="便签">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Label>
+            <Label fx:id="statisticsLabel" layoutX="10.0" layoutY="68.0" prefHeight="58.0" prefWidth="72.0" text="统计">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Label>
+            <Label fx:id="settingsLabel" layoutX="10.0" layoutY="127.0" prefHeight="58.0" prefWidth="72.0" text="设置">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Label>
+         </children>
+      </VBox>
+   </left>
+   <center>
+      <StackPane fx:id="stackPane" prefHeight="150.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <Pane fx:id="homepagePane" prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <Label fx:id="hasClassLabel" layoutX="75.0" layoutY="254.0" prefHeight="41.0" prefWidth="106.0" text="今日课程" />
+                  <Label fx:id="tipLabel" layoutX="42.0" layoutY="86.0" prefHeight="41.0" prefWidth="1222.0" text="Tips" />
+                  <Label layoutX="39.0" layoutY="514.0" prefHeight="35.0" prefWidth="99.0" text="节日预告" />
+                  <GridPane layoutX="75.0" layoutY="307.0" prefHeight="150.0" prefWidth="803.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Label fx:id="c1" alignment="CENTER" prefHeight="178.0" prefWidth="472.0" />
+                        <Label fx:id="c2" alignment="CENTER" prefHeight="187.0" prefWidth="248.0" GridPane.columnIndex="1" />
+                        <Label fx:id="c3" alignment="CENTER" prefHeight="186.0" prefWidth="259.0" textAlignment="CENTER" GridPane.columnIndex="2" />
+                        <Label fx:id="c4" alignment="CENTER" prefHeight="165.0" prefWidth="212.0" GridPane.columnIndex="3" />
+                     </children>
+                  </GridPane>
+                  <Label fx:id="today" layoutX="42.0" layoutY="26.0" prefHeight="46.0" prefWidth="123.0" text="日期" />
+                  <Label fx:id="nextfestival" layoutX="39.0" layoutY="549.0" prefHeight="35.0" prefWidth="411.0" text="节日预告" />
+               </children>
+            </Pane>
+            <VBox fx:id="classSchedulePane" visible="false">
+               <children>
+                  <GridPane prefHeight="66.0" prefWidth="1114.0">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <Label fx:id="previousWeekLabel" contentDisplay="TOP" prefHeight="58.0" prefWidth="204.0" text="上一周" GridPane.columnIndex="2" />
+                        <Label fx:id="curWeekLabel" prefHeight="69.0" prefWidth="210.0" text="第N周" GridPane.columnIndex="3" GridPane.halignment="CENTER">
+                           <font>
+                              <Font name="HYWenHei-65W Medium" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="nextWeekLabel" prefHeight="120.0" prefWidth="314.0" text="下一周" GridPane.columnIndex="4" />
+                     </children>
+                     <padding>
+                        <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                     </padding>
+                  </GridPane>
+                  <GridPane fx:id="weekDateGridPane">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <Label prefHeight="118.0" prefWidth="247.0" text="Label" />
+                        <Label layoutX="10.0" layoutY="10.0" prefHeight="118.0" prefWidth="247.0" text="Label" GridPane.columnIndex="1" />
+                        <Label layoutX="10.0" layoutY="10.0" prefHeight="118.0" prefWidth="247.0" text="Label" GridPane.columnIndex="2" />
+                        <Label layoutX="10.0" layoutY="10.0" prefHeight="118.0" prefWidth="247.0" text="Label" GridPane.columnIndex="3" />
+                        <Label layoutX="10.0" layoutY="10.0" prefHeight="118.0" prefWidth="247.0" text="Label" GridPane.columnIndex="4" />
+                        <Label layoutX="10.0" layoutY="10.0" prefHeight="118.0" prefWidth="247.0" text="Label" GridPane.columnIndex="5" />
+                        <Label layoutX="10.0" layoutY="10.0" prefHeight="118.0" prefWidth="247.0" text="Label" GridPane.columnIndex="6" />
+                        <Label layoutX="1192.0" layoutY="10.0" prefHeight="118.0" prefWidth="247.0" text="星期一" GridPane.rowIndex="1" />
+                        <Label layoutX="10.0" layoutY="10.0" prefHeight="118.0" prefWidth="247.0" text="星期二" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <Label layoutX="10.0" layoutY="10.0" prefHeight="118.0" prefWidth="247.0" text="星期三" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                        <Label layoutX="10.0" layoutY="10.0" prefHeight="118.0" prefWidth="247.0" text="星期四" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                           <font>
+                              <Font name="HYWenHei-65W Medium" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="10.0" layoutY="10.0" prefHeight="118.0" prefWidth="247.0" text="星期五" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+                        <Label layoutX="10.0" layoutY="10.0" prefHeight="118.0" prefWidth="247.0" text="星期六" GridPane.columnIndex="5" GridPane.rowIndex="1" />
+                        <Label layoutX="10.0" layoutY="10.0" prefHeight="118.0" prefWidth="247.0" text="星期日" GridPane.columnIndex="6" GridPane.rowIndex="1" />
+                     </children>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </GridPane>
+                  <GridPane fx:id="classScheduleGridPane" prefHeight="664.0" prefWidth="1374.0">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <Label prefHeight="170.0" prefWidth="318.0" textAlignment="CENTER">
+                           <GridPane.margin>
+                              <Insets />
+                           </GridPane.margin>
+                        </Label>
+                        <Label layoutX="10.0" layoutY="10.0" prefHeight="192.0" prefWidth="207.0" textAlignment="CENTER" GridPane.columnIndex="1" />
+                        <Label layoutX="10.0" layoutY="10.0" prefHeight="192.0" prefWidth="207.0" textAlignment="CENTER" GridPane.columnIndex="2" />
+                        <Label layoutX="10.0" layoutY="10.0" prefHeight="147.0" prefWidth="262.0" textAlignment="CENTER" GridPane.columnIndex="3" />
+                        <Label layoutX="184.0" layoutY="10.0" prefHeight="192.0" prefWidth="207.0" textAlignment="CENTER" GridPane.columnIndex="4" />
+                        <Label layoutX="10.0" layoutY="10.0" prefHeight="192.0" prefWidth="207.0" textAlignment="CENTER" GridPane.columnIndex="5" />
+                        <Label layoutX="880.0" layoutY="10.0" prefHeight="192.0" prefWidth="207.0" textAlignment="CENTER" GridPane.columnIndex="6" />
+                        <Label layoutX="10.0" layoutY="10.0" prefHeight="192.0" prefWidth="207.0" textAlignment="CENTER" GridPane.rowIndex="1" />
+                        <Label layoutX="10.0" layoutY="10.0" prefHeight="192.0" prefWidth="207.0" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                           <font>
+                              <Font name="HYWenHei-65W Medium" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="10.0" layoutY="10.0" prefHeight="192.0" prefWidth="207.0" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                        <Label layoutX="10.0" layoutY="10.0" prefHeight="192.0" prefWidth="207.0" style="-fx-font-family: HYWenHei-65W;" textAlignment="CENTER" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                        <Label layoutX="10.0" layoutY="10.0" prefHeight="192.0" prefWidth="207.0" textAlignment="CENTER" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+                        <Label layoutX="10.0" layoutY="10.0" prefHeight="192.0" prefWidth="207.0" textAlignment="CENTER" GridPane.columnIndex="5" GridPane.rowIndex="1" />
+                        <Label layoutX="10.0" layoutY="10.0" prefHeight="154.0" prefWidth="193.0" textAlignment="CENTER" GridPane.columnIndex="6" GridPane.rowIndex="1" />
+                        <Label layoutX="10.0" layoutY="10.0" prefHeight="192.0" prefWidth="207.0" textAlignment="CENTER" GridPane.rowIndex="2" />
+                        <Label layoutX="10.0" layoutY="10.0" prefHeight="192.0" prefWidth="207.0" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <Label layoutX="10.0" layoutY="10.0" prefHeight="192.0" prefWidth="207.0" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                        <Label layoutX="10.0" layoutY="10.0" prefHeight="192.0" prefWidth="207.0" textAlignment="CENTER" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                        <Label layoutX="10.0" layoutY="10.0" prefHeight="192.0" prefWidth="207.0" textAlignment="CENTER" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+                        <Label layoutX="10.0" layoutY="10.0" prefHeight="192.0" prefWidth="207.0" textAlignment="CENTER" GridPane.columnIndex="5" GridPane.rowIndex="2" />
+                        <Label layoutX="10.0" layoutY="10.0" prefHeight="192.0" prefWidth="207.0" textAlignment="CENTER" GridPane.columnIndex="6" GridPane.rowIndex="2" />
+                        <Label layoutX="10.0" layoutY="10.0" prefHeight="192.0" prefWidth="207.0" textAlignment="CENTER" GridPane.rowIndex="3" />
+                        <Label layoutX="10.0" layoutY="10.0" prefHeight="192.0" prefWidth="207.0" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <Label prefHeight="192.0" prefWidth="207.0" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                        <Label layoutX="10.0" layoutY="10.0" prefHeight="192.0" prefWidth="207.0" textAlignment="CENTER" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+                        <Label layoutX="10.0" layoutY="10.0" prefHeight="192.0" prefWidth="207.0" textAlignment="CENTER" GridPane.columnIndex="4" GridPane.rowIndex="3" />
+                        <Label layoutX="10.0" layoutY="10.0" prefHeight="192.0" prefWidth="207.0" textAlignment="CENTER" GridPane.columnIndex="5" GridPane.rowIndex="3" />
+                        <Label layoutX="10.0" layoutY="10.0" prefHeight="192.0" prefWidth="207.0" textAlignment="CENTER" GridPane.columnIndex="6" GridPane.rowIndex="3" />
+                        <Label prefHeight="184.0" prefWidth="530.0" GridPane.rowIndex="4" />
+                        <Label prefHeight="154.0" prefWidth="222.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                        <Label prefHeight="194.0" prefWidth="406.0" GridPane.columnIndex="2" GridPane.rowIndex="4">
+                           <font>
+                              <Font name="HYWenHei-65W Medium" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label prefHeight="170.0" prefWidth="363.0" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+                        <Label prefHeight="188.0" prefWidth="362.0" GridPane.columnIndex="4" GridPane.rowIndex="4" />
+                        <Label prefHeight="146.0" prefWidth="318.0" GridPane.columnIndex="5" GridPane.rowIndex="4" />
+                        <Label prefHeight="180.0" prefWidth="280.0" GridPane.columnIndex="6" GridPane.rowIndex="4" />
+                     </children>
+                  </GridPane>
+               </children>
+            </VBox>
+            <GridPane fx:id="notePane" visible="false">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="552.2000122070312" minWidth="10.0" prefWidth="355.99998779296874" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="1042.4000122070313" minWidth="10.0" prefWidth="986.4000122070313" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints maxHeight="335.6000122070312" minHeight="10.0" prefHeight="34.800009155273415" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="660.3999809265136" minHeight="10.0" prefHeight="645.9999908447265" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <ScrollPane fx:id="scrollPane" GridPane.rowIndex="1">
+                     <content>
+                        <VBox fx:id="notesListPane" prefHeight="680.0" prefWidth="340.0" />
+                     </content>
+                  </ScrollPane>
+                  <Pane GridPane.columnIndex="1">
+                     <children>
+                        <TextField fx:id="noteTextField" layoutY="52.0" />
+                        <Label fx:id="newNoteLabel1" alignment="CENTER" layoutX="-3.0" layoutY="19.0" prefHeight="34.0" prefWidth="42.0" text="标题" />
+                        <Label alignment="CENTER" layoutX="181.0" layoutY="47.0" prefHeight="34.0" prefWidth="91.0" text="字体大小" />
+                        <TextField fx:id="fontsizeTextField" layoutX="277.0" layoutY="54.0" prefHeight="7.0" prefWidth="39.0" />
+                     </children>
+                  </Pane>
+                  <Pane prefHeight="570.0" prefWidth="931.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <children>
+                        <TextArea fx:id="noteTextArea" layoutY="28.0" prefHeight="622.0" prefWidth="931.0" />
+                        <Label fx:id="newNoteLabel11" alignment="CENTER" layoutY="2.0" prefHeight="27.0" prefWidth="42.0" text="正文" />
+                     </children>
+                  </Pane>
+                  <Pane>
+                     <children>
+                        <Label fx:id="newNoteLabel" alignment="CENTER" layoutX="2.0" layoutY="6.0" prefHeight="34.0" prefWidth="80.0" text="新建" />
+                        <Label fx:id="saveNoteLabel" alignment="CENTER" layoutX="205.0" layoutY="6.0" prefHeight="34.0" prefWidth="82.0" text="保存" />
+                        <Label fx:id="deleteNoteLabel" alignment="CENTER" layoutX="112.0" layoutY="6.0" prefHeight="34.0" prefWidth="80.0" text="删除" />
+                        <Label fx:id="searchLabel" alignment="CENTER" layoutX="2.0" layoutY="50.0" prefHeight="34.0" prefWidth="80.0" text="搜索" />
+                        <TextField fx:id="searchTextField" layoutX="100.0" layoutY="56.0" prefHeight="23.0" prefWidth="189.0" />
+                     </children>
+                  </Pane>
+               </children>
+            </GridPane>
+            <GridPane fx:id="statisticsPane" visible="false">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="1271.200048828125" minWidth="10.0" prefWidth="754.3999633789062" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="757.4000244140624" minWidth="10.0" prefWidth="617.6000366210938" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints maxHeight="398.4" minHeight="10.0" prefHeight="378.2" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="389.6000122070312" minHeight="10.0" prefHeight="369.3999999999999" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <BarChart fx:id="chart1" animated="false" barGap="0.0" categoryGap="50.0" prefHeight="336.0" prefWidth="796.0" title="第1周课程节数">
+                     <xAxis>
+                        <CategoryAxis />
+                     </xAxis>
+                     <yAxis>
+                        <NumberAxis side="LEFT" />
+                     </yAxis>
+                  </BarChart>
+                  <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1">
+                     <children>
+                        <Label />
+                        <Label />
+                        <Label fx:id="statistics_week" onMouseClicked="#on_statistics_week" text="周" />
+                        <Label />
+                        <Label fx:id="statistics_month" onMouseClicked="#on_statistics_month" text="月" />
+                        <Label />
+                        <Label />
+                        <Label fx:id="statistics_pre" onMouseClicked="#on_statistics_pre" text="上一周" />
+                        <Label />
+                        <Label fx:id="statistics_next" onMouseClicked="#on_statistics_next" text="下一周" />
+                     </children>
+                  </VBox>
+                  <BarChart fx:id="chart2" animated="false" title="学分" GridPane.rowIndex="1">
+                     <xAxis>
+                        <CategoryAxis side="BOTTOM" />
+                     </xAxis>
+                     <yAxis>
+                        <NumberAxis side="LEFT" />
+                     </yAxis>
+                  </BarChart>
+                  <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <children>
+                        <Label />
+                        <Label />
+                        <Label fx:id="statistics_score" onMouseClicked="#on_statistics_score" text="学分" />
+                        <Label />
+                        <Label fx:id="statistics_coursetime" onMouseClicked="#on_statistics_time" text="学时" />
+                     </children>
+                  </VBox>
+               </children>
+            </GridPane>
+            <Pane fx:id="settingsPane" prefHeight="200.0" prefWidth="200.0" visible="false">
+               <children>
+                  <Label alignment="TOP_LEFT" layoutX="35.0" layoutY="28.0" prefHeight="72.0" prefWidth="964.0" text="课表数据获取方法：进入教务管理-&gt;信息查询-&gt;学生个人课表-&gt;查询-&gt;列表，复制星期，节次，课表信息三列数据到右边文本框,在下框中输入学期开始日期" wrapText="true" />
+                  <TextArea fx:id="classTextArea" layoutX="517.0" layoutY="104.0" prefHeight="17.0" prefWidth="243.0" />
+                  <Label fx:id="importLabel" alignment="CENTER" contentDisplay="TOP" layoutX="816.0" layoutY="85.0" prefHeight="59.0" prefWidth="165.0" text="导入" />
+                  <TextField fx:id="termStartDateTextField" layoutX="193.0" layoutY="117.0" promptText="20240226" />
+                  <Label layoutX="35.0" layoutY="111.0" prefHeight="35.0" prefWidth="141.0" text="学期开始日期：" />
+                  <Label layoutX="386.0" layoutY="111.0" prefHeight="35.0" prefWidth="139.0" text="课表数据：" />
+                  <Label fx:id="themeChange" layoutX="35.0" layoutY="166.0" prefHeight="54.0" prefWidth="111.0" styleClass="clickedLabel" text="切换主题" />
+               </children>
+            </Pane>
+         </children>
+      </StackPane>
+   </center>
+   <top>
+      <GridPane fx:id="titlePane" nodeOrientation="LEFT_TO_RIGHT" BorderPane.alignment="CENTER">
+         <columnConstraints>
+            <ColumnConstraints fillWidth="false" hgrow="SOMETIMES" maxWidth="475.20001220703125" minWidth="-Infinity" prefWidth="66.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="1384.799951171875" minWidth="10.0" prefWidth="1368.200048828125" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="115.199951171875" minWidth="-Infinity" prefWidth="30.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <Label fx:id="closeLabel" alignment="CENTER" contentDisplay="CENTER" prefHeight="30.0" prefWidth="30.0" GridPane.columnIndex="2" GridPane.halignment="RIGHT">
+               <graphic>
+                  <ImageView fx:id="closeIcon" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" />
+               </graphic>
+            </Label>
+            <Label fx:id="leftTopLabel" minWidth="-Infinity" prefHeight="84.0" prefWidth="66.0" />
+         </children>
+      </GridPane>
+   </top>
+</BorderPane>
